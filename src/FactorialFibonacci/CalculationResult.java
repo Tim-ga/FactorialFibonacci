@@ -1,5 +1,4 @@
 package FactorialFibonacci;
-
 import java.util.Arrays;
 
 public class CalculationResult {
