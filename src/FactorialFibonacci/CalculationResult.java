@@ -4,7 +4,7 @@ import java.util.Arrays;
 public class CalculationResult {
 
     public static String calculation(int algorithmId, int loopType, int n) throws IncorrectVariableExeption {
-        String result = "";
+        String result;
         switch (algorithmId) {
             case 1:
                 result = String.valueOf(CalculationResult.factorialLoopTypeSelection(loopType, n));
@@ -19,7 +19,7 @@ public class CalculationResult {
     }
 
     public static int factorialLoopTypeSelection(int loopType, int n) throws IncorrectVariableExeption {
-        int result = 0;
+        int result;
         switch (loopType) {
             case 1:
                 result = Factorial.factorialCycleWhile(n);
@@ -37,7 +37,7 @@ public class CalculationResult {
     }
 
     public static int[] fibonacciLoopTypeSelection(int loopType, int n) throws IncorrectVariableExeption {
-        int[] result = new int[0];
+        int[] result;
         switch (loopType) {
             case 1:
                 result = Fibonacci.fibonacciCycleWhile(n);
