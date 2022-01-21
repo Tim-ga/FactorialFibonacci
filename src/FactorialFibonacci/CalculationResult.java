@@ -4,23 +4,22 @@ import java.util.Arrays;
 
 public class CalculationResult {
 
-    public static void calculation(int algorithmId, int loopType, int n) {
+    public static String calculation(int algorithmId, int loopType, int n) throws IncorrectVariableExeption {
+        String result = "";
         switch (algorithmId) {
             case 1:
-                int resultInt = CalculationResult.factorialLoopTypeSelection(loopType, n);
-                System.out.println(resultInt);
+                result = String.valueOf(CalculationResult.factorialLoopTypeSelection(loopType, n));
                 break;
             case 2:
-                int[] resultArray = CalculationResult.fibonacciLoopTypeSelection(loopType, n);
-                System.out.println(Arrays.toString(resultArray));
+                result = Arrays.toString(CalculationResult.fibonacciLoopTypeSelection(loopType, n));
                 break;
             default:
-                System.out.println("Ошибка! Значение \"n\" должно быть 1 или 2!");
-                break;
+                throw new IncorrectVariableExeption("Ошибка! Значение \"n\" должно быть 1 или 2!");
         }
+        return result;
     }
 
-    public static int factorialLoopTypeSelection(int loopType, int n) {
+    public static int factorialLoopTypeSelection(int loopType, int n) throws IncorrectVariableExeption {
         int result = 0;
         switch (loopType) {
             case 1:
@@ -33,13 +32,12 @@ public class CalculationResult {
                 result = Factorial.factorialCycleFor(n);
                 break;
             default:
-                System.out.println("Ошибка! Значение \"n\" должно быть от 1 до 3!");
-                break;
+                throw new IncorrectVariableExeption("Ошибка! Значение \"n\" должно быть от 1 до 3!");
         }
         return result;
     }
 
-    public static int[] fibonacciLoopTypeSelection(int loopType, int n) {
+    public static int[] fibonacciLoopTypeSelection(int loopType, int n) throws IncorrectVariableExeption {
         int[] result = new int[0];
         switch (loopType) {
             case 1:
@@ -52,8 +50,7 @@ public class CalculationResult {
                 result = Fibonacci.fibonacciCycleFor(n);
                 break;
             default:
-                System.out.println("Ошибка! Значение \"n\" должно быть от 1 до 3!");
-                break;
+                throw new IncorrectVariableExeption("Ошибка! Значение \"n\" должно быть от 1 до 3!");
         }
         return result;
     }
