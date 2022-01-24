@@ -9,10 +9,14 @@ public class CalculationResultTest {
 
     @Test
     public void calculation() {
-        String expected = CalculationResult.calculation(1, 1, 5);
-        String actual = "120";
+        String expected1 = CalculationResult.calculation(1, 1, 5);
+        String actual1 = "120";
 
-        Assert.assertEquals(expected, actual);
+        String expected2 = CalculationResult.calculation(2, 1, 5);
+        String actual2 = "[0, 1, 1, 2, 3]";
+
+        Assert.assertEquals(expected1, actual1);
+        Assert.assertEquals(expected2, actual2);
     }
 
     @Test(expected = IncorrectVariableExeption.class)
