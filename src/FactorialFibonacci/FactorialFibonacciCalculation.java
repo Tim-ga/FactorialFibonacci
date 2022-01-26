@@ -3,6 +3,9 @@ import java.util.Arrays;
 
 public class FactorialFibonacciCalculation {
 
+    private FactorialFibonacciCalculation() {
+    }
+
     public static String algorithmIdSelection(int algorithmId, int loopType, int n) throws IncorrectVariableExeption {
         String result;
         switch (algorithmId) {
