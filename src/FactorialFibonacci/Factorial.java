@@ -2,7 +2,28 @@ package FactorialFibonacci;
 
 public class Factorial {
 
-     protected static int factorialCycleWhile(int n) {
+    private Factorial() {
+    }
+
+    protected static int factorialLoopTypeSelection(int loopType, int n) throws IncorrectVariableExeption {
+        int result;
+        switch (loopType) {
+            case 1:
+                result = Factorial.factorialCycleWhile(n);
+                break;
+            case 2:
+                result = Factorial.factorialCycleDoWhile(n);
+                break;
+            case 3:
+                result = Factorial.factorialCycleFor(n);
+                break;
+            default:
+                throw new IncorrectVariableExeption("Ошибка! Значение \"n\" должно быть от 1 до 3!");
+        }
+        return result;
+    }
+
+     private static int factorialCycleWhile(int n) {
         int result = 1;
         int[] array = new int[n];
         int i = 0;
@@ -14,7 +35,7 @@ public class Factorial {
         return result;
     }
 
-    protected static int factorialCycleDoWhile(int n) {
+    private static int factorialCycleDoWhile(int n) {
         int result = 1;
         int[] array = new int[n];
         int i = 0;
@@ -26,7 +47,7 @@ public class Factorial {
         return result;
     }
 
-    protected static int factorialCycleFor(int n) {
+    private static int factorialCycleFor(int n) {
         int result = 1;
         int[] array = new int[n];
         for (int i = 0; i < array.length; ++i) {
